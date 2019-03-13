@@ -1,3 +1,67 @@
+import tkinter as tk
+import tkinter.messagebox as msg
+num1=""
+a="0"
+window = tk.Tk()
+window.title("简易计算器")
+window.geometry("190x250")
+entry=tk.Entry(window,width=50,font=(50))
+entry.pack()
+def one():
+   how=entry.get()
+   entry.insert(len(how),1)
+def two():
+   how=entry.get()
+   entry.insert(len(how),2)
+def three():
+   how=entry.get()
+   entry.insert(len(how),3)
+def four():
+   how=entry.get()
+   entry.insert(len(how),4)
+def five():
+   how=entry.get()
+   entry.insert(len(how),5)
+def six():
+   how=entry.get()
+   entry.insert(len(how),6)
+def seven():
+   how=entry.get()
+   entry.insert(len(how),7)
+def eight():
+   how=entry.get()
+   entry.insert(len(how),8)
+def nine():
+   how=entry.get()
+   entry.insert(len(how),9)
+def zero():
+   how=entry.get()
+   entry.insert(len(how),0)
+def jia():
+   global num1
+   global a
+   a="0"
+   num1=entry.get()
+   entry.delete(0,300)
+def jian():
+   global num1
+   global a
+   a="1"
+   num1=entry.get()
+   entry.delete(0,300)
+def cheng():
+   global num1
+   global a
+   a="2"
+   num1=entry.get()
+   entry.delete(0,300)
+def chu():
+   global num1
+   global a
+   a="3"
+   num1=entry.get()
+   entry.delete(0,300)
+
 def dy():
    global a
    if a=="0":

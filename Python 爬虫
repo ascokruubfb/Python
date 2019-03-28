@@ -13,6 +13,6 @@ for i in range(len(book)):
     a=""
     for i1 in range(len(b)):
         a+=b[i1]
-    print(a)
+    print(str(i+1)+" OK!")
     x=open(thisisname+".txt","w")
     x.write(a)

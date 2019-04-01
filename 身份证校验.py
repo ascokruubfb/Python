@@ -27,15 +27,15 @@ def start(): #核心代码
             idsx = [] #置入身份证数据
             add = []
             pp = ""
+            number=0
             for i in range(17): #循环十七次表示18位身份证
                 idsx.insert(i, id[i]) #加入ID数据
                 pp += idsx[i] #转换成文本 方便以后相加于最后一位数
                 a = int(idsx[i]) #身份证的数据
                 b = int(jyma[i]) #身份证验证的key
                 add.append(a * b) #相乘到add变量
-            number = int(add[0]) + int(add[1]) + int(add[2]) + int(add[3]) + int(add[4]) + int(add[5]) + int(add[6]) + int(
-            add[7]) + int(add[8]) + int(add[9]) + +int(add[10]) + int(add[11]) + \
-            int(add[12]) + int(add[13]) + int(add[14]) + int(add[15]) + int(add[16]) #相加相加 不会for累加 尴尬。。。。
+                number += int(add[i]) #相加相加
+
             know = number % 11 #取摸
             key = {0: "1", 1: "0", 2: "X", 3: "9", 4: "8", 5: "7", 6: "6", 7: "5", 8: "4", 9: "3", 10: "2"} #字典为匹配身份证最后一位
             man = list(key.keys()) #man 列出键值

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web online chat</title>
+    <script src="http://iamwind.eu5.org/js/jquery.js"></script>
+    <script>
+        $(function(){
+                $("button").click(function () {
+                  send()
+                });
+                $("input").keyup(function (event) {
+                    x=event.which;
+                    if(x==13){
+                        send()
+                    }
+                });
+
+                function send() {
+                    data="e=";
+                    e=$("input").val();
+                    if(e==""){
+                        alert("啥也没输入。");
+                    }else {
+                        $.get("http://192.168.1.6:5000/send.asp",data+e,function (data) {
+                            alert(data);
+                        });
+                        window.location.reload()
+                    }
+                }
+
+        })
+    </script>
+</head>
+<body style="background-color: black">
+<input type="text" value="">&nbsp;&nbsp;<button>发送</button><br>
+<br>
+<div style="border: 2px solid white;width: 500px;height: 900px;color: white;font-size: 25px;">
+    {% for m in msg %}
+    Massage >>> {{m}} <br><br>
+    {% endfor %}
+</div>
+</body>
+</html>
